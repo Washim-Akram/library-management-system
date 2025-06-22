@@ -38,7 +38,7 @@ A RESTful API built with **TypeScript**, **Express**, and **MongoDB** for managi
 
 ```bash
 git clone https://github.com/Washim-Akram/library-management-system.git
-cd library-api
+cd library-management-system
 npm install
 ```
 
@@ -50,7 +50,7 @@ Create a `.env` file in the root directory:
 
 ```
 PORT=5000
-DATABASE_URL=mongodb://localhost:27017/library_db
+DATABASE_URL=mongodb://localhost:27017/library-management-system
 ```
 
 ---
@@ -77,7 +77,7 @@ npm start
 ### ✅ Base URL
 
 ```
-http://localhost:5000/api
+https://library-management-system-orcin-two.vercel.app
 ```
 
 ---
