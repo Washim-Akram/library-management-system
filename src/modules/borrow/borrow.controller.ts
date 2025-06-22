@@ -71,7 +71,7 @@ const getBorrowedBooksSummary = async (
       },
       {
         $lookup: {
-          from: "books", // collection name (should match DB, usually lowercase plural)
+          from: "books",
           localField: "_id",
           foreignField: "_id",
           as: "bookDetails",

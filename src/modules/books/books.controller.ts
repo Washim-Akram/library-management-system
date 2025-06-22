@@ -81,22 +81,23 @@ const updateBook = async (req: Request, res: Response) => {
   }
 };
 
-const deleteBook = async (req: Request, res: Response) => {
+const deleteBook = async (req: Request, res: Response): Promise<any> => {
   try {
     const { bookId } = req.params;
-    const data = await Book.findByIdAndDelete(bookId);
+    const deletedBook = await Book.findByIdAndDelete(bookId);
 
-    if (!data) {
-      res.status(404).json({
+    if (!deletedBook) {
+      return res.status(404).json({
         success: false,
         message: "Book not found",
+        data: null,
       });
     }
 
     res.json({
       success: true,
       message: "Book deleted successfully",
-      data,
+      data: null,
     });
   } catch (error) {
     res.status(500).json({

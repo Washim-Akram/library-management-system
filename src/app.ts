@@ -29,8 +29,6 @@ app.use((req: Request, res: Response, next: NextFunction) => {
 
 // Global/default error handler
 app.use(((error: any, req: Request, res: Response, next: NextFunction) => {
-  console.error("Error:", error);
-
   // Mongoose Validation Error
   if (error.name === "ValidationError") {
     return res.status(400).json({
